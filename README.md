@@ -1,9 +1,9 @@
-# PerformanceLogger
+# SchwadPerformanceLogger
 
 This gem allows you to track memory usage and time passage during the life of
-the PerformanceLogger object, as well as deltas between each check. The output
+the SchwadPerformanceLogger object, as well as deltas between each check. The output
 is `puts`'d to the console, and it also writes to a long-running CSV and per-object
-log file in `logs/performance_logger`
+log file in `logs/schwad_performance_logger`
 
 **THIS GEM IS IN DEVELOPMENT**: Major 'todo' left is to ensure that CSV and logger
 elements actually write to user's root directory and not the gem's.
@@ -13,7 +13,7 @@ elements actually write to user's root directory and not the gem's.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'performance_logger'
+gem 'schwad_performance_logger'
 ```
 
 And then execute:
@@ -22,11 +22,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install performance_logger
+    $ gem install schwad_performance_logger
 
 ## Usage
 
-`pl = PerformanceLogger.new`
+`pl = SchwadPerformanceLogger.new`
 
 ```
 **********************************************************************
@@ -48,12 +48,12 @@ Starting Test memo. Current memory: 12(Mb), difference of 0 (mb) since beginning
 
 To disable any of the outputs:
 
-`PerformanceLogger.new({puts: false, log: false, csv: false})`
+`SchwadPerformanceLogger.new({puts: false, log: false, csv: false})`
 
 To have the logger 'pause' a number of seconds during the `puts` logging so that
 you can actually see the log as it goes by. This does not affect the 'time' measurement:
 
-`PerformanceLogger.new({pause: 8})`
+`SchwadPerformanceLogger.new({pause: 8})`
 
 
 ## Development
@@ -64,7 +64,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/performance_logger. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/schwad_performance_logger. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -72,4 +72,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PerformanceLogger project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/performance_logger/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the SchwadPerformanceLogger project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/schwad_performance_logger/blob/master/CODE_OF_CONDUCT.md).

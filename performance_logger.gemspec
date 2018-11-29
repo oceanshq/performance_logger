@@ -1,16 +1,16 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "performance_logger/version"
+require "schwad_performance_logger/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "performance_logger"
-  spec.version       = PerformanceLogger::VERSION
+  spec.name          = "schwad_performance_logger"
+  spec.version       = SchwadPerformanceLogger::VERSION
   spec.authors       = ["Nick Schwaderer"]
   spec.email         = ["nicholas.schwaderer@gmail.com"]
 
   spec.summary       = %q{Track your memory and time performance in console, csv and/or logs.}
-  spec.homepage      = "https://github.com/oceanshq/performance_logger"
+  spec.homepage      = "https://github.com/oceanshq/schwad_performance_logger"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.

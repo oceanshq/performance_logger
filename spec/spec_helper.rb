@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "performance_logger"
+require "schwad_performance_logger"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

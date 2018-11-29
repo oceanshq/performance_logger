@@ -1,7 +1,7 @@
 ##
 # Logs performance during life of the object. Defaults to a trifecta of `puts`
 # output as well as logging to CSV (in the root folder) and
-# `log/performance_logger` for traditional info-level logging. It also gives
+# `log/schwad_performance_logger` for traditional info-level logging. It also gives
 # timing and memory usage info. Options include disabling extra logging,
 # including a 'sleep' parameter to have the application pause at each output
 # (so your puts info is not drowned). This does not impact the time output
@@ -17,8 +17,8 @@ class PLogger
   attr_reader :options
 
   def initialize( options = {} )
-    # system('mkdir log/performance_logger')
-    # filename = "./log/performance_logger/performance-#{Time.now.strftime("%e-%m_%l:%M%p")}.log"
+    # system('mkdir log/schwad_performance_logger')
+    # filename = "./log/schwad_performance_logger/performance-#{Time.now.strftime("%e-%m_%l:%M%p")}.log"
     # File.write(filename, "")
     # another_empty_csv_row
     # @logger = Logger.new(filename)
@@ -57,13 +57,13 @@ class PLogger
   end
 
   def another_empty_csv_row
-    CSV.open("performance_logger_measurements.csv", "ab") do |csv|
+    CSV.open("schwad_performance_logger_measurements.csv", "ab") do |csv|
       csv << []
     end
   end
 
   def csv_performance(memo)
-    CSV.open("performance_logger_measurements.csv", "ab") do |csv|
+    CSV.open("schwad_performance_logger_measurements.csv", "ab") do |csv|
       csv << [@options[:csv_memo], memo, @current_memory, @delta_memory, @second_delta_memory, @delta_time, @second_delta_time]
     end
   end

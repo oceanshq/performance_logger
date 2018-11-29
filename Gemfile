@@ -2,5 +2,5 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-# Specify your gem's dependencies in performance_logger.gemspec
+# Specify your gem's dependencies in schwad_performance_logger.gemspec
 gemspec

@@ -20,7 +20,7 @@ class PLogger
     # system('mkdir log/performance_logger')
     # filename = "./log/performance_logger/performance-#{Time.now.strftime("%e-%m_%l:%M%p")}.log"
     # File.write(filename, "")
-    another_empty_csv_row
+    # another_empty_csv_row
     # @logger = Logger.new(filename)
     @options = options
     @sleep_amount = options[:pause].to_i

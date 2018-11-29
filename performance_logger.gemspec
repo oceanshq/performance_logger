@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "performance_logger"
   spec.version       = PerformanceLogger::VERSION
   spec.authors       = ["Nick Schwaderer"]
-  spec.email         = ["nick.schwaderer@oceanshq.com"]
+  spec.email         = ["nicholas.schwaderer@gmail.com"]
 
   spec.summary       = %q{Track your memory and time performance in console, csv and/or logs.}
   spec.homepage      = "https://github.com/oceanshq/performance_logger"

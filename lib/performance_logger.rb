@@ -6,7 +6,7 @@ require 'performance_logger/performance_logger'
 
 
 module PerformanceLogger
-  def self.new(opts)
+  def self.new(opts={})
     if opts.is_a?(Hash)
       PLogger.new(opts)
     else

@@ -1,5 +1,6 @@
 require 'performance_logger/version'
 require 'csv'
+require 'logger'
 
 ##
 # Logs performance during life of the object. Defaults to a trifecta of `puts`

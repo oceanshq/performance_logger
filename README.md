@@ -28,9 +28,21 @@ Or install it yourself as:
 
 `pl = PerformanceLogger.new`
 
+```
+**********************************************************************
+Starting initialization. Current memory: 12(Mb), difference of 0 (mb) since beginning and difference of 0 since last log. time passed: 0.004678 seconds, time since last run: 0.004678
+**********************************************************************
+```
+
 Each subsequent log:
 
-`pl.log_performance("my memo, i.e. 'assigns values to MyObject attributes'")`
+`pl.log_performance("Test memo")`
+
+```
+*********************************************************************
+Starting Test memo. Current memory: 12(Mb), difference of 0 (mb) since beginning and difference of 0 since last log. time passed: 22.493993 seconds, time since last run: 9.616874
+*********************************************************************
+```
 
 ### Options
 

@@ -25,7 +25,7 @@ class PerformanceLogger
     another_empty_csv_row
     @logger = Logger.new(filename)
     @options = options
-    @sleep_amount = options[:sleep].to_i
+    @sleep_amount = options[:pause].to_i
     @initial_memory = GetProcessMem.new.mb.round
     @current_memory = @initial_memory
     @delta_memory = 0

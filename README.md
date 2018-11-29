@@ -1,8 +1,9 @@
 # PerformanceLogger
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/performance_logger`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem allows you to track memory usage and time passage during the life of
+the PerformanceLogger object, as well as deltas between each check. The output
+is `puts`'d to the console, and it also writes to a long-running CSV and per-object
+log file in `logs/performance_logger`
 
 ## Installation
 
@@ -22,7 +23,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`pl = PerformanceLogger.new`
+
+Each subsequent log:
+
+`pl.log_performance("my memo, i.e. 'assigns values to MyObject attributes'")`
+
+### Options
+
+To disable any of the outputs:
+
+`PerformanceLogger.new({puts: false, log: false, csv: false})`
+
+To have the logger 'pause' a number of seconds during the `puts` logging so that
+you can actually see the log as it goes by. This does not affect the 'time' measurement:
+
+`PerformanceLogger.new({pause: 8})`
+
 
 ## Development
 

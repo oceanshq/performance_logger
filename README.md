@@ -5,6 +5,9 @@ the PerformanceLogger object, as well as deltas between each check. The output
 is `puts`'d to the console, and it also writes to a long-running CSV and per-object
 log file in `logs/performance_logger`
 
+**THIS GEM IS IN DEVELOPMENT**: Major 'todo' left is to ensure that CSV and logger
+elements actually write to user's root directory and not the gem's.
+
 ## Installation
 
 Add this line to your application's Gemfile:

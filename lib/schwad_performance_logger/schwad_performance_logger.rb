@@ -17,11 +17,11 @@ class PLogger
   attr_reader :options
 
   def initialize( options = {} )
-    # system('mkdir log/schwad_performance_logger')
-    # filename = "./log/schwad_performance_logger/performance-#{Time.now.strftime("%e-%m_%l:%M%p")}.log"
-    # File.write(filename, "")
-    # another_empty_csv_row
-    # @logger = Logger.new(filename)
+    system('mkdir log/schwad_performance_logger')
+    filename = "./log/schwad_performance_logger/performance-#{Time.now.strftime("%e-%m_%l:%M%p")}.log"
+    File.write(filename, "")
+    another_empty_csv_row
+    @logger = Logger.new(filename)
     @options = options
     @sleep_amount = options[:pause].to_i
     @initial_memory = GetProcessMem.new.mb.round
@@ -39,8 +39,8 @@ class PLogger
   def log_performance(memo=nil)
     update_checks
     puts_performance(memo) unless @options[:puts] == false
-    # logger_performance(memo) unless @options[:log] == false
-    # csv_performance(memo) unless @options[:csv] == false
+    logger_performance(memo) unless @options[:log] == false
+    csv_performance(memo) unless @options[:csv] == false
     sleep @sleep_amount
   end
 

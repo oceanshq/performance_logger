@@ -5,9 +5,6 @@ the SchwadPerformanceLogger object, as well as deltas between each check. The ou
 is `puts`'d to the console, and it also writes to a long-running CSV and per-object
 log file in `logs/schwad_performance_logger`
 
-**THIS GEM IS IN DEVELOPMENT**: Major 'todo' left is to ensure that CSV and logger
-elements actually write to user's root directory and not the gem's.
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -26,7 +23,7 @@ Or install it yourself as:
 
 ## Usage
 
-`pl = SchwadPerformanceLogger.new`
+`pl = SchwadPerformanceLogger.new({full_memo: 'Check extract method refactoring'})`
 
 ```
 **********************************************************************
@@ -46,6 +43,8 @@ Starting Test memo. Current memory: 12(Mb), difference of 0 (mb) since beginning
 
 ### Options
 
+`full_memo` option adds an extra header in the `log` outputs as well as a header to each new set of csv outputs. This is not to be confused with the 'per-run' message passed to `#log_performance` which is only passed to that check.
+
 To disable any of the outputs:
 
 `SchwadPerformanceLogger.new({puts: false, log: false, csv: false})`
@@ -55,6 +54,20 @@ you can actually see the log as it goes by. This does not affect the 'time' meas
 
 `SchwadPerformanceLogger.new({pause: 8})`
 
+## Usage example:
+
+```
+pl = SchwadPerformanceLogger.new({pause: 3, full_memo: 'Retry object-oriented approach.', log: false})
+pl.log_performance('check status before writing to database')
+
+# code here
+
+pl.log_performance('check status after writing to database')
+
+# code
+
+pl.log_performance('inspect final performance after executing service')
+```
 
 ## Development
 

@@ -17,6 +17,7 @@ class PLogger
   attr_reader :options
 
   def initialize( options = {} )
+    system('mkdir log')
     system('mkdir log/schwad_performance_logger')
     filename = "./log/schwad_performance_logger/performance-#{Time.now.strftime("%e-%m_%l:%M%p")}.log"
     File.write(filename, "")
@@ -53,7 +54,7 @@ class PLogger
   end
 
   def logger_performance(memo)
-    @logger.log(1, "\n\n#{memo}: \n\n Current Memory: #{@current_memory} \n\n Memory Since Start: #{@delta_memory}\n\n Memory Since Last Run: #{@second_delta_memory}\n\n Time Passed: #{@delta_time} \n\n Time Since Last Run: #{@second_delta_time} ")
+    @logger.log(1, "#{options[:full_memo]}\n----------------------\n\n#{memo}: \n\n Current Memory: #{@current_memory} \n\n Memory Since Start: #{@delta_memory}\n\n Memory Since Last Run: #{@second_delta_memory}\n\n Time Passed: #{@delta_time} \n\n Time Since Last Run: #{@second_delta_time}\n--------------------\n\n ")
   end
 
   def another_empty_csv_row
@@ -64,7 +65,7 @@ class PLogger
 
   def csv_performance(memo)
     CSV.open("schwad_performance_logger_measurements.csv", "ab") do |csv|
-      csv << [@options[:csv_memo], memo, @current_memory, @delta_memory, @second_delta_memory, @delta_time, @second_delta_time]
+      csv << [@options[:full_memo], memo, @current_memory, @delta_memory, @second_delta_memory, @delta_time, @second_delta_time]
     end
   end
 
